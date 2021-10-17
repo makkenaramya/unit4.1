@@ -1,0 +1,178 @@
+Database:
+The database is a collection of inter-related data which is used to retrieve, insert and delete the data efficiently. It is also used to organize the data in the form of a table, schema, views, and reports, etc.
+Database Management System
++Database management system is a software which is used to manage the database. For example: MySQL, Oracle, etc are a very popular commercial database which is used in different applications.
++DBMS provides an interface to perform various operations like database creation, storing data in it, updating data, creating a table in the database and a lot more+.
++It provides protection and security to the database. In the case of multiple users, it also maintains data consistency.
+
+DBMS allows users the following tasks:
+
++Data Definition: It is used for creation, modification, and removal of definition that defines the organization of data in the database.
++Data Updation: It is used for the insertion, modification, and deletion of the actual data in the database.
++Data Retrieval: It is used to retrieve the data from the database which can be used by applications for various purposes.
++User Administration: It is used for registering and monitoring users, maintain data integrity, enforcing data security, dealing with concurrency control, monitoring performance and recovering information corrupted by unexpected failure.
+
+Characteristics of DBMS:
+It uses a digital repository established on a server to store and manage the information.
+It can provide a clear and logical view of the process that manipulates data.
+DBMS contains automatic backup and recovery procedures.
+It contains ACID properties which maintain data in a healthy state in case of failure.
+It can reduce the complex relationship between data.
+It is used to support manipulation and processing of data.
+It is used to provide security of data.
+It can view the database from different viewpoints according to the requirements of the user.
+
+Types of operators in SQL:
+
+1.Arithematic Operators,
+2.Comparison Operators
+3.Logical Operators
+
+1.Arithematic Operators:a.Addtion Operator(+): Adds values on either side of the operator.
+Eg consider the Sailor table
+
+Select 5+3 from dual; 
+
+     5+3                     
+--------
+       8
+
+Select 5*3 from dual; 
+
+     5*3                     
+--------
+      15
+
+Select 15/2 from dual; 
+
+    15/2                     
+--------
+     7.5
+
+SQL> select * from sailors;
+ 
+       SID SNAME                    RATING        AGE                           
+---------- -------------------- ---------- ----------                           
+        22 Dustin                        7         45                           
+        29 Brutus                        1         33                           
+        31 Lubber                        8       55.5                           
+        32 Andy                          8       25.5                           
+        58 Rusty                        10         35                           
+        64 Horataio                      7         35                           
+        71 Zorba                        10         16                           
+        74 Horataio                      9         35                           
+        85 Art                           3       25.5                           
+        95 Bob                           3       63.5                           
+10 rows selected.
+
+SELECT employee_id, employee_name, salary, salary + 100
+   AS "salary + 100" FROM addition;
+Output:
+employee_id	employee_name	salary	salary+100
+1	              alex	     25000	25100
+2	               rr	       55000	55100
+3	               jpm	     52000	52100
+4	              ggshmr	   12312	12412
+
+SELECT employee_id, employee_name, salary, salary + employee_id
+   AS "salary + employee_id" FROM addition;
+   
+Output:
+
+employee_id	employee_name	salary	salary+employee_id
+1	              alex	    25000	     25001
+2	               rr	      55000	     55002
+3	              jpm	      52000	     52003
+4	             ggshmr	    12312	     12316
+
+
+SELECT employee_id, employee_name, salary, salary * employee_id
+     AS "salary * employee_id" FROM addition;
+    
+Output:
+
+employee_id	employee_name	salary	salary * employee_id
+1	              Finch	    25000	     25000
+2	              Peter	    55000	     110000
+3	              Warner	  52000	     156000
+4	              Watson	  12312	      49248
+     
+
+
+
+select * from reserves;
+
+       SID        BID DAY                                                      
+---------- ---------- ---------                                                 
+        22        101 10-OCT-98                                                 
+        22        102 10-OCT-98                                                 
+        22        103 08-OCT-98                                                 
+        22        104 07-OCT-98                                                 
+        31        102 10-NOV-98                                                 
+        31        103 06-NOV-98                                                 
+        31        104 12-NOV-98                                                 
+        64        101 05-SEP-98                                                 
+        64        102 08-SEP-98                                                 
+        74        103 08-SEP-98                                                 
+10 rows selected.
+
+select * from boats;
+
+
+       BID BNAME                COLOR                                           
+---------- -------------------- --------------------                            
+       101 Interlake            blue                                            
+       102 Interlake            red                                             
+       103 Clipper              green                                           
+       104 Marine               red     
+       
+SQL>select * from employee;
+
+ENAME                   SALARY
+-------------------     ----------------------
+preet                   20000
+
+parimal                 15000
+
+
+SQL>select * from employee where salary > 18000;
+ 
+ENAME                   SALARY
+-------------------     ----------------------
+preet                   20000
+
+
+SQL>select * from employee where salary < 18000;
+ 
+ENAME                   SALARY
+-------------------     ----------------------
+parimal                 15000
+
+
+SQL>select * from employee where salary >= 15000;
+
+ENAME                   SALARY
+-------------------     ----------------------
+preet                   20000
+
+parimal                 15000     
+       
+      
+SQL>select * from employee;
+
+ENAME                   SALARY                    CITY
+-------------------     ----------------------    ----------------------
+preet                   20000                     Jamnagar
+
+parimal                 15000                     Rajkot
+
+Khanjan                 12000                     Surat
+
+Mehul                    8000                     Ahmedabad
+
+
+SQL>select * from employee where city = 'jamnagar' AND salary > 15000;
+ 
+ENAME                   SALARY                    CITY
+-------------------     ----------------------    ----------------------
+preet                   20000                     Jamnagar
